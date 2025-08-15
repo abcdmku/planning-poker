@@ -12,7 +12,7 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build the Vite application
+# Build the Vite application (creates dist folder)
 RUN npm run build
 
 # Production stage
@@ -35,9 +35,6 @@ COPY socket-server.ts ./
 COPY tsconfig.json ./
 COPY src/server ./src/server
 COPY src/lib/socket.types.ts ./src/lib/socket.types.ts
-
-# Copy public assets
-COPY public ./dist/
 
 # Create a startup script
 RUN echo '#!/bin/sh' > start.sh && \

@@ -1,52 +1,5 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-
-import appCss from '../styles.css?url'
-
-const queryClient = new QueryClient()
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      {
-        charSet: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        title: 'Planning Poker - Real-time Estimation',
-      },
-    ],
-    links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
-      {
-        rel: 'icon',
-        type: 'image/svg+xml',
-        href: '/vite.svg',
-      },
-    ],
-  }),
-
-  shellComponent: RootDocument,
+  component: () => <Outlet />
 })
-
-function RootDocument({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
-        <Scripts />
-      </body>
-    </html>
-  )
-}
