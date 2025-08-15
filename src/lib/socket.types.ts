@@ -3,6 +3,7 @@ export interface Player {
   name: string
   vote: number | null
   socketId?: string
+  isSpectator?: boolean
 }
 
 export interface RoomState {
@@ -17,6 +18,7 @@ export interface ClientToServerEvents {
   'reveal': () => void
   'reset': () => void
   'update-name': (data: { name: string }) => void
+  'toggle-spectator': (data: { isSpectator: boolean }) => void
 }
 
 export interface ServerToClientEvents {
@@ -24,8 +26,9 @@ export interface ServerToClientEvents {
   'player-joined': (data: { player: Player }) => void
   'player-left': (data: { playerId: string }) => void
   'vote-updated': (data: { playerId: string; vote: number | null }) => void
-  'cards-revealed': () => void
+  'cards-revealed': (data: { timestamp: number }) => void
   'game-reset': () => void
   'player-updated': (data: { playerId: string; name: string }) => void
   'host-changed': (data: { hostId: string }) => void
+  'spectator-toggled': (data: { playerId: string; isSpectator: boolean }) => void
 }

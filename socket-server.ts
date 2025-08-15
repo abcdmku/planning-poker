@@ -16,7 +16,7 @@ const io = new SocketIOServer(httpServer, {
 // Setup socket handlers
 setupSocketHandlers(io as any)
 
-const port = process.env.SOCKET_PORT || 3002
+const port = process.env.SOCKET_PORT || 3001
 
 httpServer.listen(port, () => {
   console.log(`Socket.io server running at http://localhost:${port}`)

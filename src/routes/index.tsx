@@ -1,5 +1,4 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { useState } from 'react'
 
 export const Route = createFileRoute('/')({
   component: HomePage,
@@ -7,14 +6,12 @@ export const Route = createFileRoute('/')({
 
 function HomePage() {
   const navigate = useNavigate()
-  const [playerName, setPlayerName] = useState('')
 
   const createRoom = () => {
     const roomId = Math.random().toString(36).slice(2, 10)
     navigate({
       to: '/room/$roomId',
-      params: { roomId },
-      search: { name: playerName || undefined }
+      params: { roomId }
     })
   }
 
@@ -25,8 +22,7 @@ function HomePage() {
     if (roomId) {
       navigate({
         to: '/room/$roomId',
-        params: { roomId },
-        search: { name: playerName || undefined }
+        params: { roomId }
       })
     }
   }
@@ -38,22 +34,7 @@ function HomePage() {
           <h1 className="text-4xl font-extrabold tracking-tight mb-2">Planning Poker</h1>
           <p className="text-gray-300/80 mb-8">Estimate together in real-time</p>
           
-          <div className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Your Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                value={playerName}
-                onChange={(e) => setPlayerName(e.target.value)}
-                placeholder="Enter your name"
-                className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-              />
-            </div>
-
-            <div className="space-y-4">
+          <div className="space-y-4">
               <button
                 onClick={createRoom}
                 className="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
@@ -84,7 +65,6 @@ function HomePage() {
                   Join Room
                 </button>
               </form>
-            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,78 @@
+<svg width="110" height="80" viewBox="0 0 110 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Space Invader in cyan/turquoise color -->
+  <g fill="#00CED1">
+    <!-- Top antennae -->
+    <rect x="20" y="0" width="10" height="10"/>
+    <rect x="80" y="0" width="10" height="10"/>
+    
+    <!-- Second row -->
+    <rect x="30" y="10" width="10" height="10"/>
+    <rect x="70" y="10" width="10" height="10"/>
+    
+    <!-- Third row - main body starts -->
+    <rect x="20" y="20" width="10" height="10"/>
+    <rect x="30" y="20" width="10" height="10"/>
+    <rect x="40" y="20" width="10" height="10"/>
+    <rect x="50" y="20" width="10" height="10"/>
+    <rect x="60" y="20" width="10" height="10"/>
+    <rect x="70" y="20" width="10" height="10"/>
+    <rect x="80" y="20" width="10" height="10"/>
+    
+    <!-- Fourth row - eyes row -->
+    <rect x="10" y="30" width="10" height="10"/>
+    <rect x="20" y="30" width="10" height="10"/>
+    <!-- Eye (black/empty space) at x="30" -->
+    <rect x="40" y="30" width="10" height="10"/>
+    <rect x="50" y="30" width="10" height="10"/>
+    <rect x="60" y="30" width="10" height="10"/>
+    <!-- Eye (black/empty space) at x="70" -->
+    <rect x="80" y="30" width="10" height="10"/>
+    <rect x="90" y="30" width="10" height="10"/>
+    
+    <!-- Fifth row - full width -->
+    <rect x="0" y="40" width="10" height="10"/>
+    <rect x="10" y="40" width="10" height="10"/>
+    <rect x="20" y="40" width="10" height="10"/>
+    <rect x="30" y="40" width="10" height="10"/>
+    <rect x="40" y="40" width="10" height="10"/>
+    <rect x="50" y="40" width="10" height="10"/>
+    <rect x="60" y="40" width="10" height="10"/>
+    <rect x="70" y="40" width="10" height="10"/>
+    <rect x="80" y="40" width="10" height="10"/>
+    <rect x="90" y="40" width="10" height="10"/>
+    <rect x="100" y="40" width="10" height="10"/>
+    
+    <!-- Sixth row - arms -->
+    <rect x="0" y="50" width="10" height="10"/>
+    <!-- Gap -->
+    <rect x="20" y="50" width="10" height="10"/>
+    <rect x="30" y="50" width="10" height="10"/>
+    <rect x="40" y="50" width="10" height="10"/>
+    <rect x="50" y="50" width="10" height="10"/>
+    <rect x="60" y="50" width="10" height="10"/>
+    <rect x="70" y="50" width="10" height="10"/>
+    <rect x="80" y="50" width="10" height="10"/>
+    <!-- Gap -->
+    <rect x="100" y="50" width="10" height="10"/>
+    
+    <!-- Seventh row - legs -->
+    <rect x="0" y="60" width="10" height="10"/>
+    <!-- Gap -->
+    <rect x="20" y="60" width="10" height="10"/>
+    <!-- Gap -->
+    <!-- Gap - removed middle blocks -->
+    <!-- Gap -->
+    <!-- Gap -->
+    <!-- Gap -->
+    <rect x="80" y="60" width="10" height="10"/>
+    <!-- Gap -->
+    <rect x="100" y="60" width="10" height="10"/>
+    
+    <!-- Bottom row - feet -->
+    <rect x="30" y="70" width="10" height="10"/>
+    <rect x="40" y="70" width="10" height="10"/>
+    <!-- Gap in middle -->
+    <rect x="60" y="70" width="10" height="10"/>
+    <rect x="70" y="70" width="10" height="10"/>
+  </g>
+</svg>
