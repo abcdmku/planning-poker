@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000",
-    "dev:socket": "tsx socket-server.ts",
+    "dev:server": "tsx server.ts",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "NODE_ENV=production tsx server.ts",
     "test": "vitest run"
   },
   "dependencies": {

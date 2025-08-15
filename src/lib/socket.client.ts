@@ -14,10 +14,10 @@ export function useSocket() {
 
     // Create a new socket connection for this component instance
     if (!socketRef.current) {
-      // Use relative path for production, localhost for development
+      // In production, connect to same origin. In dev, connect to localhost:3001
       const SOCKET_URL = window.location.hostname === 'localhost' 
         ? 'http://localhost:3001' 
-        : window.location.origin  // Use same origin for CapRover (proxied through port 80)
+        : ''  // Empty string = same origin
       
       socketRef.current = io(SOCKET_URL, {
         path: '/socket.io/',
