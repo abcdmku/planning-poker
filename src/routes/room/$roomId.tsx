@@ -429,7 +429,9 @@ function RoomPage() {
         <div className="rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 p-6 shadow-2xl">
           <header className="flex items-start justify-between mb-6">
             <div>
-              <h1 className="text-3xl font-extrabold tracking-tight">Planning Poker</h1>
+              <h1 className="text-3xl font-extrabold tracking-tight">
+                <a href="/" className="hover:text-gray-300 transition-colors">Planning Poker</a>
+              </h1>
               <p className="mt-1 text-sm text-gray-300/80">
                 Estimate together in real-time
               </p>

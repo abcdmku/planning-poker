@@ -18,11 +18,14 @@
 
 ### 2. Configure App Settings
 
+**CRITICAL: Enable WebSocket Support**
+
 In the CapRover dashboard for your app:
 
 1. Go to "HTTP Settings" tab
-2. Enable "WebSocket Support" ✅
-3. Optionally enable "Force HTTPS" for production
+2. **Enable "WebSocket Support" ✅** (REQUIRED for Socket.io)
+3. Enable "Force HTTPS" for production
+4. Save & Update
 
 ### 3. Deploy Using CapRover CLI
 
@@ -63,12 +66,12 @@ To use a custom domain:
 
 ## Architecture on CapRover
 
-The app runs as a single container with:
-- **Express server** on port 80 (CapRover's expected port)
-- **Socket.io server** on port 3001 (internal)
-- **Proxy** from `/socket.io` to the internal socket server
+The app runs as a **single unified server** that:
+- Serves the static frontend files (HTML, JS, CSS)
+- Handles Socket.io WebSocket connections
+- All through a single port (80/443)
 
-This setup allows both the frontend and WebSocket connections to work through a single port (80/443).
+This simplified architecture eliminates the need for complex proxy configurations.
 
 ## Verifying Deployment
 
@@ -84,14 +87,16 @@ After deployment:
 
 If WebSocket connections fail:
 
-1. **Verify WebSocket Support is enabled** in CapRover HTTP Settings
-2. Check CapRover logs: `App Logs` tab in dashboard
-3. Ensure your nginx config (if customized) supports WebSocket:
-   ```nginx
-   proxy_http_version 1.1;
-   proxy_set_header Upgrade $http_upgrade;
-   proxy_set_header Connection "upgrade";
-   ```
+1. **MOST IMPORTANT: Verify WebSocket Support is enabled** in CapRover HTTP Settings
+   - Go to your app → "HTTP Settings" tab
+   - Make sure "WebSocket Support" checkbox is ✅ enabled
+   - Click "Save & Update"
+   
+2. If using HTTPS, ensure "Force HTTPS" is enabled
+
+3. Check CapRover logs: `App Logs` tab in dashboard
+
+4. The app will automatically fall back to polling if WebSocket fails
 
 ### App Won't Start
 

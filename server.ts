@@ -17,7 +17,10 @@ const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
   cors: {
     origin: process.env.NODE_ENV === 'production' ? false : ['http://localhost:3000'],
     methods: ['GET', 'POST']
-  }
+  },
+  // Allow connections from behind proxies (like CapRover's nginx)
+  allowEIO3: true,
+  transports: ['websocket', 'polling']
 })
 
 // Setup socket handlers
